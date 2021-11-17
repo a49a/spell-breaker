@@ -1,5 +1,5 @@
 pub fn quick_sort(v: &mut Vec<i32>) -> Vec<i32> {
-    if v.len() <= 1{
+    if v.len() <= 1 {
         return v.clone();
     }
 
