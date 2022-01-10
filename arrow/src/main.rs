@@ -6,10 +6,10 @@ use datafusion::arrow::record_batch::RecordBatch;
 async fn main() -> datafusion::error::Result<()> {
   // register the table
   let mut ctx = ExecutionContext::new();
-  ctx.register_csv("example", "tests/example.csv", CsvReadOptions::new()).await?;
+  ctx.register_csv("example", "/Users/luna/tmp/test.csv", CsvReadOptions::new()).await?;
 
   // create a plan to run a SQL query
-  let df = ctx.sql("SELECT a, MIN(b) FROM example GROUP BY a LIMIT 100").await?;
+  let df = ctx.sql("SELECT * FROM example LIMIT 100").await?;
 
   // execute and print results
   df.show().await?;
