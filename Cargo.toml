@@ -1,2 +1,6 @@
 [workspace]
-members = ["lang", "arrow"]
+members = [
+    "lang", 
+    "arrow",
+    "sqlparser"
+]
